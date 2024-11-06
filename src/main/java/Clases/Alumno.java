@@ -1,9 +1,12 @@
-
 package Clases;
 
-
-public class Alumno {
+public class Alumno extends Persona{
     
     String codigo;
+    public class CalcularPromedios{
+      
+    
+    }
+    
     
 }
