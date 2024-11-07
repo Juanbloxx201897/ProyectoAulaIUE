@@ -12,10 +12,10 @@ import java.net.URL;
 import java.util.LinkedList;
 import javax.swing.JOptionPane;
 
-public class Archivo {
+public class ArchivoAsistencias {
 
     private String nombre;
-    public Archivo(String nombre) {
+    public ArchivoAsistencias(String nombre) {
         this.nombre=nombre;
     }
      
@@ -44,7 +44,7 @@ public class Archivo {
 
     private File obtenerArchivo() {       
         try {
-            URL url = getClass().getClassLoader().getResource("archivos/"+nombre);//solamente se cambia la ruta 
+            URL url = getClass().getClassLoader().getResource("Archivos/"+nombre);//solamente se cambia la ruta 
             return new File(url.toURI());            
         } catch (URISyntaxException ex) {
             ex.printStackTrace();
@@ -76,7 +76,7 @@ public class Archivo {
             String directorio=archivo.getParent();
             archivo.delete();
 
-            new FileWriter(directorio + "/productos.txt",true); //colocar nombre del archivo nada mas 
+            new FileWriter(directorio + "/asistencias.txt",true); //colocar nombre del archivo nada mas 
         }catch(IOException ex){
             ex.printStackTrace();
         }
