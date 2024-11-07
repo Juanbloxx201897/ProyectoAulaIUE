@@ -1,6 +1,8 @@
 
 package Clases;
 
+import javax.swing.JOptionPane;
+
 public class Profesor extends Persona{
     
         int Cedula; 
@@ -43,8 +45,11 @@ public class Profesor extends Persona{
         this.Antiguedad = Antiguedad;
     }
        
-        
-   public void CalcularSueldo() {
-       
-   }     
-}
+    public void calcularSueldo() {
+            double sueldoBasico = 0;
+            double antiguedad = 0;
+        double sueldoTotal = sueldoBasico + (sueldoBasico * 0.05 * antiguedad); // Sueldo con un 5% adicional por año de antigüedad
+        JOptionPane.showMessageDialog(null, "Sueldo total del profesor: " + sueldoTotal);
+    }
+}    
+  
