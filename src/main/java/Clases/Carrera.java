@@ -53,76 +53,72 @@ public class Carrera {
         this.materias = materias;
     }
     
-     public void agregarCarrera() {
-        String nombreCarrera = JOptionPane.showInputDialog("Ingrese el nombre de la carrera:");
-        String facultadCarrera = JOptionPane.showInputDialog("Ingrese la facultad de la carrera:");
+     public void AgregarCarrera() {
+        String NombreCarrera = JOptionPane.showInputDialog("Ingrese el nombre de la carrera:");
+        String FacultadCarrera = JOptionPane.showInputDialog("Ingrese la facultad de la carrera:");
 
-        Carrera nuevaCarrera = new Carrera(nombreCarrera, facultadCarrera);
-        carreras.add(nuevaCarrera);
+        Carrera NuevaCarrera = new Carrera(NombreCarrera, FacultadCarrera);
+        carreras.add(NuevaCarrera);
         JOptionPane.showMessageDialog(null, "Carrera agregada con éxito.");
     }
 
-    public void eliminarCarrera() {
-        String nombreCarrera = JOptionPane.showInputDialog("Ingrese el nombre de la carrera a eliminar:");
-        Carrera carreraEliminar = null;
+    public void EliminarCarrera() {
+        String NombreCarrera = JOptionPane.showInputDialog("Ingrese el nombre de la carrera a eliminar:");
+        Carrera EliminarCarrera = null;
 
         for (Carrera carrera : carreras) {
-            if (carrera.getNombre().equals(nombreCarrera)) {
-                carreraEliminar = carrera;
+            if (carrera.getNombre().equals(NombreCarrera)) {
+                EliminarCarrera = carrera;
                 break;
             }
         }
 
-        if (carreraEliminar != null) {
-            carreras.remove(carreraEliminar);
+        if (EliminarCarrera != null) {
+            carreras.remove(EliminarCarrera);
             JOptionPane.showMessageDialog(null, "Carrera eliminada con éxito.");
-        } else {
-            JOptionPane.showMessageDialog(null, "Carrera no encontrada.");
-        }
+        } 
     }
 
-    public void verCarreras() {
-        StringBuilder listaCarreras = new StringBuilder("Lista de Carreras:\n");
+    public void VerCarreras() {
+        StringBuilder ListaCarreras = new StringBuilder("Lista de Carreras:\n");
         for (Carrera carrera : carreras) {
-            listaCarreras.append(carrera.toString()).append("\n");
+            ListaCarreras.append(carrera.toString()).append("\n");
         }
-        JOptionPane.showMessageDialog(null, listaCarreras.toString());
+        JOptionPane.showMessageDialog(null, ListaCarreras.toString());
     }
 
-    public void agregarMateria() {
-        String nombreMateria = JOptionPane.showInputDialog("Ingrese el nombre de la materia:");
-        int codigoMateria = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el código de la materia:"));
+    public void AgregarMateria() {
+        String NombreMateria = JOptionPane.showInputDialog("Ingrese el nombre de la materia:");
+        int CodigoMateria = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el código de la materia:"));
 
-        Materias nuevaMateria = new Materias(nombreMateria, codigoMateria);
-        materias.add(nuevaMateria);
+        Materias NuevaMateria = new Materias(NombreMateria, CodigoMateria);
+        materias.add(NuevaMateria);
         JOptionPane.showMessageDialog(null, "Materia agregada con éxito.");
     }
 
-    public void eliminarMateria() {
-        int codigoMateria = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el código de la materia a eliminar:"));
-        Materias materiaEliminar = null;
+    public void EliminarMateria() {
+        int CodigoMateria = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el código de la materia a eliminar:"));
+        Materias EliminarMateria = null;
 
         for (Materias materia : materias) {
-            if (materia.getCódigo() == codigoMateria) {
-                materiaEliminar = materia;
+            if (materia.getCódigo() == CodigoMateria) {
+                EliminarMateria = materia;
                 break;
             }
         }
 
-        if (materiaEliminar != null) {
-            materias.remove(materiaEliminar);
+        if (EliminarMateria != null) {
+            materias.remove(EliminarMateria);
             JOptionPane.showMessageDialog(null, "Materia eliminada con éxito.");
-        } else {
-            JOptionPane.showMessageDialog(null, "Materia no encontrada.");
-        }
+        } 
     }
 
-    public void verMaterias() {
-        StringBuilder listaMaterias = new StringBuilder("Lista de Materias:\n");
+    public void VerMaterias() {
+        StringBuilder ListaMaterias = new StringBuilder("Lista de Materias:\n");
         for (Materias materia : materias) {
-            listaMaterias.append(materia.toString()).append("\n");
+            ListaMaterias.append(materia.toString()).append("\n");
         }
-        JOptionPane.showMessageDialog(null, listaMaterias.toString());
+        JOptionPane.showMessageDialog(null, ListaMaterias.toString());
     }
 }
 

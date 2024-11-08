@@ -45,11 +45,12 @@ public class Profesor extends Persona{
         this.Antiguedad = Antiguedad;
     }
        
-    public void calcularSueldo() {
+     public void CalcularSueldo() {
+            
+            int Antiguedad = Integer.parseInt(JOptionPane.showInputDialog("Ingrese los años de antigüedad:"));
+        double IncrementoPorAntiguedad = 0.05 * Antiguedad; 
             double sueldoBasico = 0;
-            double antiguedad = 0;
-        double sueldoTotal = sueldoBasico + (sueldoBasico * 0.05 * antiguedad); // Sueldo con un 5% adicional por año de antigüedad
-        JOptionPane.showMessageDialog(null, "Sueldo total del profesor: " + sueldoTotal);
+        double sueldoTotal = sueldoBasico * (1 + IncrementoPorAntiguedad);
+        JOptionPane.showMessageDialog(null, "El sueldo total del profesor es: $" + sueldoTotal);
     }
-}    
-  
+}

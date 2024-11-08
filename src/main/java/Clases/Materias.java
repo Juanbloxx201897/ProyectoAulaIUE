@@ -56,20 +56,20 @@ public class Materias {
         this.asistencias = asistencias;
     }
     
-    public void agregarAlumno() {
-        String nombreAlumno = JOptionPane.showInputDialog("Ingrese el nombre del alumno:");
-        int edad = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la edad del alumno:"));
-        String numeroTelefono = JOptionPane.showInputDialog("Ingrese el número de teléfono del alumno:");
-        String correoInstitucional = JOptionPane.showInputDialog("Ingrese el correo institucional del alumno:");
-        String codigoAlumno = JOptionPane.showInputDialog("Ingrese el código del alumno:");
+    public void AgregarAlumno() {
+        String NombreAlumno = JOptionPane.showInputDialog("Ingrese el nombre del alumno:");
+        int Edad = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la edad del alumno:"));
+        String NumeroTelefono = JOptionPane.showInputDialog("Ingrese el número de teléfono del alumno:");
+        String CorreoInstitucional = JOptionPane.showInputDialog("Ingrese el correo institucional del alumno:");
+        String CodigoAlumno = JOptionPane.showInputDialog("Ingrese el código del alumno:");
 
-        Alumno nuevoAlumno = new Alumno(nombreAlumno, edad, numeroTelefono, correoInstitucional);
-        nuevoAlumno.setCodigo(codigoAlumno);
+        Alumno nuevoAlumno = new Alumno(NombreAlumno, Edad, NumeroTelefono, CorreoInstitucional);
+        nuevoAlumno.setCodigo(CodigoAlumno);
         alumnos.add(nuevoAlumno);
         JOptionPane.showMessageDialog(null, "Alumno agregado a la materia con éxito.");
     }
 
-    public void eliminarAlumno() {
+    public void EliminarAlumno() {
         String codigo = JOptionPane.showInputDialog("Ingrese el código del alumno que desea eliminar:");
         Alumno EliminarAlumno = null;
 
@@ -83,35 +83,31 @@ public class Materias {
         if (EliminarAlumno != null) {
             alumnos.remove(EliminarAlumno);
             JOptionPane.showMessageDialog(null, "Alumno eliminado de la materia con éxito.");
-        } else {
-            JOptionPane.showMessageDialog(null, "Alumno no encontrado.");
-        }
+        } 
     }
 
-    public void agregarAsistencia() {
-        String fecha = JOptionPane.showInputDialog("Ingrese la fecha de la asistencia:");
-        Asistencias nuevaAsistencia = new Asistencias(fecha);
-        asistencias.add(nuevaAsistencia);
+    public void AgregarAsistencia() {
+        String Fecha = JOptionPane.showInputDialog("Ingrese la fecha de la asistencia:");
+        Asistencias NuevaAsistencia = new Asistencias(Fecha);
+        asistencias.add(NuevaAsistencia);
         JOptionPane.showMessageDialog(null, "Asistencia agregada con éxito.");
     }
 
-    public void eliminarAsistencia() {
-        String fecha = JOptionPane.showInputDialog("Ingrese la fecha de la asistencia que desea eliminar:");
-        Asistencias asistenciaEliminar = null;
+    public void EliminarAsistencia() {
+        String Fecha = JOptionPane.showInputDialog("Ingrese la fecha de la asistencia que desea eliminar:");
+        Asistencias EliminarAsistencia = null;
 
         for (Asistencias asistencia : asistencias) {
-            if (asistencia.getFecha().equals(fecha)) {
-                asistenciaEliminar = asistencia;
+            if (asistencia.getFecha().equals(Fecha)) {
+                EliminarAsistencia = asistencia;
                 break;
             }
         }
 
-        if (asistenciaEliminar != null) {
-            asistencias.remove(asistenciaEliminar);
+        if (EliminarAsistencia  != null) {
+            asistencias.remove(EliminarAsistencia );
             JOptionPane.showMessageDialog(null, "Asistencia eliminada con éxito.");
-        } else {
-            JOptionPane.showMessageDialog(null, "Asistencia no encontrada.");
-        }
+        } 
     }
 
     public void calcularAsistencias() {
