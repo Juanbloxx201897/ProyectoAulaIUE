@@ -4,7 +4,7 @@ package Vista;
 public class ProyectoAulaIUE {
 
     public static void main(String[] args) {
-        PaginaPrincipal abrir = new PaginaPrincipal();
+        Estudiante abrir = new Estudiante();
         abrir.setVisible(true);
         
         
